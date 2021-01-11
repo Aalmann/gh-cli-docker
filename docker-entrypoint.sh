@@ -1,14 +1,11 @@
-#!/bin/bash
-
-if [[ -z "$GH_API_TOKEN" ]]; then 
-    echo Please provide a GitHub API token.
-    exit 1
-fi
-
-echo login to GitHub using given API token
-gh auth login -w ${GH_API_TOKEN}
-
-echo Successfully logged in
-echo Calling gh $@
-
+#!/bin/sh
+echo "----------------------------------------"
+echo "##########  GH CLI @ Docker   ##########"
+echo ""
+echo "REMARK: the GH CLI command 'gh auth login' does not work with docker."
+echo "        Please provide GH_TOKEN in environment."
+echo ""
+echo "Calling GH CLI with:" 
+echo "    >> gh $@"
+echo "----------------------------------------"
 gh $@
