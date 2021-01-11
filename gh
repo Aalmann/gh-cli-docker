@@ -1,5 +1,5 @@
 #!/bin/bash 
- IMAGE_NAME=aalmann/gh-cli
+IMAGE_NAME=aalmann/gh-cli
 
 if [[ -z "$GH_TOKEN" ]]; then 
     TOKEN_ENV=""

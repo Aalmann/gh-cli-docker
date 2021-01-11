@@ -7,6 +7,7 @@ ENV GOROOT /usr/lib/go
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
 ENV GH_CLI_INSTALL /gh_cli
+ENV CLI_GIT_REFERENCE trunk
 
 WORKDIR $GOPATH
 
@@ -14,6 +15,7 @@ RUN apk add --update --no-cache git make go && \
     go version && \
     git clone https://github.com/cli/cli.git gh-cli && \
     cd gh-cli && \
+    git checkout -d ${CLI_GIT_REFERENCE} && \
     make install && \
     make install prefix=${GH_CLI_INSTALL} && \
     ls -la ${GH_CLI_INSTALL} && \ 
