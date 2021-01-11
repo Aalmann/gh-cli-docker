@@ -25,9 +25,9 @@ FROM alpine
 
 ENV GH_CLI_INSTALL /gh_cli
 
-COPY --from=build ${GH_CLI_INSTALL}/* /usr/local/bin
+COPY --from=build ${GH_CLI_INSTALL}/* /usr/local/bin/
 
-COPY docker-entrypoint.sh /usr/local/bin
+COPY docker-entrypoint.sh /usr/local/bin/
 RUN apk add --update --no-cache git && \
     chmod 777 /usr/local/bin/docker-entrypoint.sh
 
