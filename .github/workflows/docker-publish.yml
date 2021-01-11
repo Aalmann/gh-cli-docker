@@ -31,7 +31,7 @@ jobs:
         run: |
           docker build --build-arg CLI_GIT_REFERENCE=$CLI_GIT_REFERENCE . --file Dockerfile -t $IMAGE_NAME:test
           docker run $IMAGE_NAME:test --version
-          docker run -e GH_TOKEN=${{ secrets.GITHUB_TOKEN }} $IMAGE_NAME:test repo view 
+          docker run -e GH_TOKEN=${{ secrets.GITHUB_TOKEN }} $IMAGE_NAME:test repo view ${{ github.repository }}
 
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
