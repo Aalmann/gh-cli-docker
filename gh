@@ -9,4 +9,4 @@ else
     echo GH_TOKEN found in environment. Will using it.
 fi
 
-docker run ${TOKEN_ENV} -v `pwd`:/gh $IMAGE_NAME $@
+docker run ${TOKEN_ENV} -v `pwd`:/gh --user `id -u`:`id -g` $IMAGE_NAME $@
