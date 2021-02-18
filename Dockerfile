@@ -7,7 +7,8 @@ ENV GOROOT /usr/lib/go
 ENV GOPATH /go
 ENV PATH /go/bin:$PATH
 ENV GH_CLI_INSTALL /gh_cli
-ENV CLI_GIT_REFERENCE trunk
+ENV CLI_GIT_REFERENCE v1.6.1 
+# use 'trunk' for latest and greatest
 
 WORKDIR $GOPATH
 
